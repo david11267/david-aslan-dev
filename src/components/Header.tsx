@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50">
       <nav className=" p-4 flex justify-center">
-        <div className="font-bold rounded-full space-x-16 p-4 border-2 ">
+        <div className="font-bold text-xl rounded-full space-x-16 p-4 border-2 ">
           {links.map((link) => (
             <Link className="text-foreground/90 hover:underline  " to={link.to}>
               {link.label}

@@ -15,8 +15,7 @@ function App() {
       </div>
       <div>
         <img
-          className=" rounded-full "
-          width={100}
+          className="rounded-full w-40 h-40 object-cover "
           src="src\assets\David_pp.jpg"
           alt="a picture of me"
         />
