@@ -3,12 +3,16 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanstackDevtools } from '@tanstack/react-devtools'
 
 import Header from '../components/Header'
+import Background from '@/components/Background'
 
 export const Route = createRootRoute({
   component: () => (
     <>
+      <Background />
       <Header />
-      <Outlet />
+      <main className="flex justify-center mt-32">
+        <Outlet />
+      </main>
       <TanstackDevtools
         config={{
           position: 'bottom-left',
