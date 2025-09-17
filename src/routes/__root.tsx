@@ -10,11 +10,7 @@ export const Route = createRootRoute({
     <>
       <Background />
       <Header />
-      <main className="flex justify-center mt-32">
-        <div className="flex flex-col">
-          <Outlet />
-        </div>
-      </main>
+      <Outlet />
       <TanstackDevtools
         config={{
           position: 'bottom-left',
