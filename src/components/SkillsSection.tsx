@@ -35,7 +35,6 @@ import type { ComponentType } from 'react'
 import {
   Tooltip,
   TooltipContent,
-  TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 

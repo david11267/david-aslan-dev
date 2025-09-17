@@ -9,7 +9,7 @@ export const Route = createFileRoute('/')({
 
 function App() {
   return (
-    <div className="space-y-16">
+    <div className="space-y-32 py-16">
       <HeroSection />
       <SkillsSection />
       <ProjectsSection />

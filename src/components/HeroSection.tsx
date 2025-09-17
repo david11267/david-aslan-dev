@@ -1,13 +1,28 @@
+import { SiGithub, SiLinkedin } from 'react-icons/si'
 import TextType from './TextType'
 import TiltedCard from './TiltedCard'
+import type { ComponentType } from 'react'
 
 export default function HeroSection() {
+  const socials: Array<{
+    name: string
+    href: string
+    Icon: ComponentType<{ className?: string }>
+  }> = [
+    { name: 'Github', href: 'https://github.com/david11267', Icon: SiGithub },
+    {
+      name: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/davidaslandev/',
+      Icon: SiLinkedin,
+    },
+  ]
+
   return (
     <section
-      className="flex justify-center flex-wrap-reverse gap-8 "
+      className="flex justify-center md:flex-nowrap flex-wrap  gap-16 "
       id="heroSection"
     >
-      <div className="w-1/2">
+      <div className=" space-y-2">
         <h1 className="text-4xl font-bold">
           <TextType
             text={[
@@ -34,6 +49,14 @@ export default function HeroSection() {
           challenge-driven environments and aim for elegant simplicity, solid
           architecture, and reliable logging in the software I build.
         </p>
+
+        <div className="mt-8 flex space-x-4  ">
+          {socials.map(({ name, href, Icon }) => (
+            <a href={href} className="flex  p-4 rounded-xl">
+              <Icon className="scale-200" />
+            </a>
+          ))}
+        </div>
       </div>
       <div>
         <TiltedCard
