@@ -1,3 +1,12 @@
+import Project from './Project'
+import { projects } from '@/content'
+
 export function ProjectsSection() {
-  return <section>ProjectsSection</section>
+  return (
+    <section>
+      {projects.map((p) => (
+        <Project project={p} reverse={false} />
+      ))}
+    </section>
+  )
 }

@@ -12,7 +12,7 @@ function App() {
     <div className="space-y-32 py-16">
       <HeroSection />
       <SkillsSection />
-      <ProjectsSection />
+      <ProjectsSection  />
     </div>
   )
 }
