@@ -74,7 +74,7 @@ export default function HeroSection() {
           imageWidth="300px"
           rotateAmplitude={12}
           scaleOnHover={1.2}
-          showMobileWarning={false}
+          showMobileWarning={true}
           showTooltip={true}
           displayOverlayContent={true}
         />

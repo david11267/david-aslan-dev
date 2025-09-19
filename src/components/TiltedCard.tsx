@@ -1,28 +1,28 @@
-import { useRef, useState } from 'react';
-import { motion, useMotionValue, useSpring } from 'motion/react';
-import type { SpringOptions } from 'motion/react';
+import { useRef, useState, useEffect } from 'react'
+import { motion, useMotionValue, useSpring } from 'motion/react'
+import type { SpringOptions } from 'motion/react'
 
 interface TiltedCardProps {
-  imageSrc: React.ComponentProps<'img'>['src'];
-  altText?: string;
-  captionText?: string;
-  containerHeight?: React.CSSProperties['height'];
-  containerWidth?: React.CSSProperties['width'];
-  imageHeight?: React.CSSProperties['height'];
-  imageWidth?: React.CSSProperties['width'];
-  scaleOnHover?: number;
-  rotateAmplitude?: number;
-  showMobileWarning?: boolean;
-  showTooltip?: boolean;
-  overlayContent?: React.ReactNode;
-  displayOverlayContent?: boolean;
+  imageSrc: React.ComponentProps<'img'>['src']
+  altText?: string
+  captionText?: string
+  containerHeight?: React.CSSProperties['height']
+  containerWidth?: React.CSSProperties['width']
+  imageHeight?: React.CSSProperties['height']
+  imageWidth?: React.CSSProperties['width']
+  scaleOnHover?: number
+  rotateAmplitude?: number
+  showMobileWarning?: boolean
+  showTooltip?: boolean
+  overlayContent?: React.ReactNode
+  displayOverlayContent?: boolean
 }
 
 const springValues: SpringOptions = {
   damping: 30,
   stiffness: 100,
-  mass: 2
-};
+  mass: 2,
+}
 
 export default function TiltedCard({
   imageSrc,
@@ -37,55 +37,69 @@ export default function TiltedCard({
   showMobileWarning = true,
   showTooltip = true,
   overlayContent = null,
-  displayOverlayContent = false
+  displayOverlayContent = false,
 }: TiltedCardProps) {
-  const ref = useRef<HTMLElement>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const rotateX = useSpring(useMotionValue(0), springValues);
-  const rotateY = useSpring(useMotionValue(0), springValues);
-  const scale = useSpring(1, springValues);
-  const opacity = useSpring(0);
+  const ref = useRef<HTMLElement>(null)
+  const x = useMotionValue(0)
+  const y = useMotionValue(0)
+  const rotateX = useSpring(useMotionValue(0), springValues)
+  const rotateY = useSpring(useMotionValue(0), springValues)
+  const scale = useSpring(1, springValues)
+  const opacity = useSpring(0)
   const rotateFigcaption = useSpring(0, {
     stiffness: 350,
     damping: 30,
-    mass: 1
-  });
+    mass: 1,
+  })
 
-  const [lastY, setLastY] = useState(0);
+  const [lastY, setLastY] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 640) // sm breakpoint
+    }
+
+    checkIsMobile()
+    window.addEventListener('resize', checkIsMobile)
+
+    return () => window.removeEventListener('resize', checkIsMobile)
+  }, [])
 
   function handleMouse(e: React.MouseEvent<HTMLElement>) {
-    if (!ref.current) return;
+    if (!ref.current || isMobile) return
 
-    const rect = ref.current.getBoundingClientRect();
-    const offsetX = e.clientX - rect.left - rect.width / 2;
-    const offsetY = e.clientY - rect.top - rect.height / 2;
+    const rect = ref.current.getBoundingClientRect()
+    const offsetX = e.clientX - rect.left - rect.width / 2
+    const offsetY = e.clientY - rect.top - rect.height / 2
 
-    const rotationX = (offsetY / (rect.height / 2)) * -rotateAmplitude;
-    const rotationY = (offsetX / (rect.width / 2)) * rotateAmplitude;
+    const rotationX = (offsetY / (rect.height / 2)) * -rotateAmplitude
+    const rotationY = (offsetX / (rect.width / 2)) * rotateAmplitude
 
-    rotateX.set(rotationX);
-    rotateY.set(rotationY);
+    rotateX.set(rotationX)
+    rotateY.set(rotationY)
 
-    x.set(e.clientX - rect.left);
-    y.set(e.clientY - rect.top);
+    x.set(e.clientX - rect.left)
+    y.set(e.clientY - rect.top)
 
-    const velocityY = offsetY - lastY;
-    rotateFigcaption.set(-velocityY * 0.6);
-    setLastY(offsetY);
+    const velocityY = offsetY - lastY
+    rotateFigcaption.set(-velocityY * 0.6)
+    setLastY(offsetY)
   }
 
   function handleMouseEnter() {
-    scale.set(scaleOnHover);
-    opacity.set(1);
+    if (isMobile) return
+    scale.set(scaleOnHover)
+    opacity.set(1)
   }
 
   function handleMouseLeave() {
-    opacity.set(0);
-    scale.set(1);
-    rotateX.set(0);
-    rotateY.set(0);
-    rotateFigcaption.set(0);
+    if (isMobile) return
+    opacity.set(0)
+    scale.set(1)
+    rotateX.set(0)
+    rotateY.set(0)
+    rotateFigcaption.set(0)
   }
 
   return (
@@ -94,13 +108,13 @@ export default function TiltedCard({
       className="relative w-full h-full [perspective:800px] flex flex-col items-center justify-center"
       style={{
         height: containerHeight,
-        width: containerWidth
+        width: containerWidth,
       }}
-      onMouseMove={handleMouse}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseMove={isMobile ? undefined : handleMouse}
+      onMouseEnter={isMobile ? undefined : handleMouseEnter}
+      onMouseLeave={isMobile ? undefined : handleMouseLeave}
     >
-      {showMobileWarning && (
+      {showMobileWarning && !isMobile && (
         <div className="absolute top-4 text-center text-sm block sm:hidden">
           This effect is not optimized for mobile. Check on desktop.
         </div>
@@ -113,7 +127,7 @@ export default function TiltedCard({
           height: imageHeight,
           rotateX,
           rotateY,
-          scale
+          scale,
         }}
       >
         <motion.img
@@ -122,7 +136,7 @@ export default function TiltedCard({
           className="absolute top-0 left-0 object-cover rounded-[15px] will-change-transform [transform:translateZ(0)]"
           style={{
             width: imageWidth,
-            height: imageHeight
+            height: imageHeight,
           }}
         />
 
@@ -140,12 +154,12 @@ export default function TiltedCard({
             x,
             y,
             opacity,
-            rotate: rotateFigcaption
+            rotate: rotateFigcaption,
           }}
         >
           {captionText}
         </motion.figcaption>
       )}
     </figure>
-  );
+  )
 }
