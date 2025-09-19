@@ -1,4 +1,5 @@
 import { resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import viteReact from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
@@ -12,13 +13,14 @@ export default defineConfig({
     viteReact(),
     tailwindcss(),
   ],
+  resolve: {
+    alias: {
+      '@': resolve(fileURLToPath(new URL('.', import.meta.url)), 'src'),
+    },
+  },
+  // @ts-ignore - test config for vitest
   test: {
     globals: true,
     environment: 'jsdom',
-  },
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, './src'),
-    },
   },
 })
