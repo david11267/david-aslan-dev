@@ -65,7 +65,7 @@ export default function HeroSection() {
       </div>
       <div>
         <TiltedCard
-          imageSrc="src\assets\David_pp.jpg"
+          imageSrc="/David_pp.jpg"
           altText="a picture of David Aslan"
           captionText="a picture of David Aslan"
           containerHeight="300px"
