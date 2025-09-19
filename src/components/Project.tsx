@@ -13,8 +13,8 @@ export default function Project({ project, reverse }: Props) {
   return (
     <div
       className={
-        'flex md:flex-nowrap flex-wrap gap-8' +
-        (reverse ? ' flex-row-reverse' : '')
+        'w-full flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8 max-w-full' +
+        (reverse ? ' lg:flex-row-reverse' : '')
       }
     >
       <div className="space-y-4">
