@@ -31,6 +31,7 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiVercel,
+  SiVite,
 } from 'react-icons/si'
 import {
   FaCloud,
@@ -170,6 +171,12 @@ export const skills: Array<Skill> = [
       "JavaScript runtime built on Chrome's V8 engine for server-side development. Enables full-stack JavaScript development with non-blocking I/O and extensive package ecosystem.",
   },
   {
+    name: 'Vite',
+    Icon: SiVite,
+    description:
+      'Fast build tool and development server for modern web projects. Provides instant hot module replacement, optimized bundling, and excellent developer experience with minimal configuration.',
+  },
+  {
     name: 'TanStack Router',
     Icon: SiReactrouter,
     description:
@@ -295,7 +302,6 @@ export const projects: Array<Project> = [
   {
     header: 'Quintic-3d',
     text: 'A landing page for a on demand 3d-printing store complete with sanity cms, attached shopify store, internationalization and contact/upload form connected to company email allowing qustomers to request quotes on their CAD files.',
-    href: 'https://quintic-3d.vercel.app/',
     skills: [
       skills.find((s) => s.name.toLowerCase() === 'next.js')!,
       skills.find((s) => s.name.toLowerCase() === 'typescript')!,
@@ -312,12 +318,13 @@ export const projects: Array<Project> = [
     text: 'This is the website you are currently on right now. I needed a place to display my work, skills and provide an easy way to get to know me.',
     href: 'https://davidaslan.dev/',
     skills: [
-      skills.find((s) => s.name.toLowerCase() === 'storyblok')!,
-      skills.find((s) => s.name.toLowerCase() === 'next.js')!,
+      skills.find((s) => s.name.toLowerCase() === 'vite')!,
+      skills.find((s) => s.name.toLowerCase() === 'react')!,
       skills.find((s) => s.name.toLowerCase() === 'typescript')!,
+      skills.find((s) => s.name.toLowerCase() === 'tanstack router')!,
+      skills.find((s) => s.name.toLowerCase() === 'tailwindcss')!,
       skills.find((s) => s.name.toLowerCase() === 'html5')!,
       skills.find((s) => s.name.toLowerCase() === 'css')!,
-      skills.find((s) => s.name.toLowerCase() === 'tailwindcss')!,
     ].filter(Boolean),
     repository: 'https://github.com/david11267/david-aslan-dev',
     companyName: 'Personal project',
