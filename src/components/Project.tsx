@@ -1,5 +1,7 @@
 import Autoplay from 'embla-carousel-autoplay'
+import { TooltipProvider } from '@radix-ui/react-tooltip'
 import { Carousel, CarouselContent, CarouselItem } from './ui/carousel'
+import SkillBadge from './SkillBadge'
 import type { Project } from '@/types/projects'
 
 type Props = {
@@ -19,9 +21,11 @@ export default function Project({ project, reverse }: Props) {
         <h3 className="text-2xl">{project.header}</h3>
         <p>{project.text}</p>
         <div className="flex gap-4">
-          {project.skills?.map(({ Icon }) => (
-            <Icon />
-          ))}
+          <TooltipProvider>
+            {project.skills?.map(({ name, Icon, description }) => (
+              <SkillBadge description={description} Icon={Icon} name={name} />
+            ))}
+          </TooltipProvider>
         </div>
       </div>
       {project.imagesUrl && (

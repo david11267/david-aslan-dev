@@ -250,8 +250,8 @@ export const projects: Array<Project> = [
       'https://picsum.photos/500/500',
     ],
     skills: [
-      skills.find((s) => s.name === 'C')!,
-      skills.find((s) => s.name === 'CMS')!,
+      skills.find((s) => s.name.toLowerCase() === 'c')!,
+      skills.find((s) => s.name.toLowerCase() === 'cms')!,
     ],
   },
 ]
