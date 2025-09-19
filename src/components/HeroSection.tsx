@@ -56,7 +56,7 @@ export default function HeroSection() {
         </p>
 
         <div className="mt-8 flex space-x-4  ">
-          {socials.map(({ name, href, Icon }) => (
+          {socials.map(({ href, Icon }) => (
             <a href={href} className="flex  p-4 rounded-xl hover:scale-110">
               <Icon className="scale-200" />
             </a>
