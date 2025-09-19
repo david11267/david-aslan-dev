@@ -9,7 +9,7 @@ export default function SkillBadge({ Icon, description, name }: Skill) {
         <TooltipTrigger>
           <div
             key={name}
-            className="flex items-center gap-3 rounded-lg  border-white/10 backdrop-blur px-3 py-2 cursor-help"
+            className="flex items-center gap-3 rounded-lg  border-white/10 backdrop-blur-xl px-3 py-2 cursor-help"
           >
             <Icon className="h-5 w-5 " />
             <span className="text-sm">{name}</span>

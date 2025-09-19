@@ -18,9 +18,19 @@ export default function Project({ project, reverse }: Props) {
       }
     >
       <div className="space-y-4">
-        <h3 className="text-2xl">{project.header}</h3>
+        <div>
+          <a href={project.href}>
+            <h3 className="text-2xl">{project.header}</h3>
+          </a>
+          <h4>{project.companyName}</h4>
+        </div>
+
         <p>{project.text}</p>
-        <div className="flex gap-4">
+        <a className="text-accent" href={project.repository}>
+          {project.repository}
+        </a>
+
+        <div className="flex flex-wrap gap-4">
           <TooltipProvider>
             {project.skills?.map(({ name, Icon, description }) => (
               <SkillBadge description={description} Icon={Icon} name={name} />

@@ -1,5 +1,6 @@
 import {
   SiApachekafka,
+  SiBootstrap,
   SiC,
   SiCplusplus,
   SiCss3,
@@ -7,18 +8,26 @@ import {
   SiDotnet,
   SiFigma,
   SiGooglecloud,
+  SiGooglesheets,
   SiHtml5,
   SiJavascript,
   SiLinux,
   SiMqtt,
+  SiMui,
   SiNextdotjs,
   SiNodedotjs,
   SiOpenjdk,
   SiPostgresql,
+  SiPostman,
+  SiPython,
+  SiRabbitmq,
   SiReact,
   SiReactquery,
   SiReactrouter,
+  SiSanity,
+  SiShopify,
   SiSpringboot,
+  SiStoryblok,
   SiTailwindcss,
   SiTypescript,
   SiVercel,
@@ -73,6 +82,12 @@ export const skills: Array<Skill> = [
       'Extension of C with object-oriented features and advanced memory management. Used for system software, game engines, and high-performance applications.',
   },
   {
+    name: 'Python',
+    Icon: SiPython,
+    description:
+      'High-level, interpreted programming language known for its readability and versatility. Widely used for data science, machine learning, web development, automation, and scripting.',
+  },
+  {
     name: 'HTML5',
     Icon: SiHtml5,
     description:
@@ -89,6 +104,18 @@ export const skills: Array<Skill> = [
     Icon: SiTailwindcss,
     description:
       'Utility-first CSS framework that provides low-level utility classes for rapid UI development. Enables consistent design systems and faster prototyping without writing custom CSS.',
+  },
+  {
+    name: 'Bootstrap',
+    Icon: SiBootstrap,
+    description:
+      'Popular CSS framework with pre-built components and responsive grid system. Provides consistent design patterns and speeds up development with ready-to-use UI components.',
+  },
+  {
+    name: 'Material UI',
+    Icon: SiMui,
+    description:
+      "React component library implementing Google's Material Design principles. Offers comprehensive UI components with consistent theming and accessibility features built-in.",
   },
 
   // Ways of Working
@@ -117,12 +144,6 @@ export const skills: Array<Skill> = [
     Icon: SiDotnet,
     description:
       'Cross-platform development framework by Microsoft supporting multiple programming languages. Provides comprehensive libraries and tools for building web, mobile, desktop, and cloud applications.',
-  },
-  {
-    name: 'ASP MVC',
-    Icon: SiDotnet,
-    description:
-      'Web application framework following the Model-View-Controller pattern. Enables clean separation of concerns and testable web applications with built-in routing and dependency injection.',
   },
   {
     name: 'React',
@@ -185,6 +206,12 @@ export const skills: Array<Skill> = [
       'Distributed streaming platform for building real-time data pipelines and applications. Handles high-throughput, fault-tolerant data streaming with horizontal scalability.',
   },
   {
+    name: 'RabbitMQ',
+    Icon: SiRabbitmq,
+    description:
+      'Open-source message broker that implements the Advanced Message Queuing Protocol (AMQP). Enables reliable message delivery, routing, and queuing for distributed applications.',
+  },
+  {
     name: 'Docker',
     Icon: SiDocker,
     description:
@@ -221,12 +248,6 @@ export const skills: Array<Skill> = [
       'Cloud platform specializing in frontend deployment and serverless functions. Optimized for Next.js applications with automatic scaling, edge computing, and seamless Git integration.',
   },
   {
-    name: 'Cloud',
-    Icon: FaCloud,
-    description:
-      'On-demand computing resources and services delivered over the internet. Enables scalable, cost-effective solutions without managing physical infrastructure or hardware.',
-  },
-  {
     name: 'CMS',
     Icon: FaCubes,
     description:
@@ -238,20 +259,107 @@ export const skills: Array<Skill> = [
     description:
       'Collaborative design tool for creating user interfaces, prototypes, and design systems. Enables real-time collaboration between designers and developers with cloud-based workflows.',
   },
+  {
+    name: 'Postman',
+    Icon: SiPostman,
+    description:
+      'API development and testing platform that simplifies the process of building, testing, and documenting APIs. Provides intuitive interface for making HTTP requests and automated testing.',
+  },
+  {
+    name: 'Storyblok',
+    Icon: SiStoryblok,
+    description:
+      'Headless CMS that provides a visual editor for content creation with API-first approach. Enables content management with real-time collaboration and multi-channel publishing.',
+  },
+  {
+    name: 'Sanity CMS',
+    Icon: SiSanity,
+    description:
+      'Structured content platform with real-time collaboration and customizable editing environment. Provides flexible content modeling and powerful query capabilities.',
+  },
+  {
+    name: 'Shopify',
+    Icon: SiShopify,
+    description:
+      'E-commerce platform enabling businesses to create online stores with built-in payment processing, inventory management, and customizable themes.',
+  },
+  {
+    name: 'Google Sheets',
+    Icon: SiGooglesheets,
+    description:
+      'Cloud-based spreadsheet application that enables real-time collaboration, data analysis, and integration with other Google services and APIs.',
+  },
 ]
 
 export const projects: Array<Project> = [
   {
-    header: 'Header',
-    text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam dolor iusto esse magnam similique, dolorem quae voluptate pariatur cumque sequi iste recusandae velit incidunt doloremque obcaecati! Reprehenderit voluptatum, odio, laudantium, sunt nulla ea rem possimus quibusdam aliquam minima nisi iusto corporis eum laborum doloremque. Harum assumenda quos soluta exercitationem repellat!',
-    imagesUrl: [
-      'https://picsum.photos/500/500',
-      'https://picsum.photos/500/500',
-      'https://picsum.photos/500/500',
-    ],
+    header: 'Quintic-3d',
+    text: 'A landing page for a on demand 3d-printing store complete with sanity cms, attached shopify store, internationalization and contact/upload form connected to company email allowing qustomers to request quotes on their CAD files.',
+    href: 'https://quintic-3d.vercel.app/',
     skills: [
-      skills.find((s) => s.name.toLowerCase() === 'c')!,
-      skills.find((s) => s.name.toLowerCase() === 'cms')!,
-    ],
+      skills.find((s) => s.name.toLowerCase() === 'next.js')!,
+      skills.find((s) => s.name.toLowerCase() === 'typescript')!,
+      skills.find((s) => s.name.toLowerCase() === 'html5')!,
+      skills.find((s) => s.name.toLowerCase() === 'css')!,
+      skills.find((s) => s.name.toLowerCase() === 'sanity cms')!,
+      skills.find((s) => s.name.toLowerCase() === 'shopify')!,
+    ].filter(Boolean),
+    repository: 'https://github.com/david11267/quintic-3d',
+    companyName: 'Jabbar Investment AB',
+  },
+  {
+    header: 'Davidaslan.dev',
+    text: 'This is the website you are currently on right now. I needed a place to display my work, skills and provide an easy way to get to know me.',
+    href: 'https://davidaslan.dev/',
+    skills: [
+      skills.find((s) => s.name.toLowerCase() === 'storyblok')!,
+      skills.find((s) => s.name.toLowerCase() === 'next.js')!,
+      skills.find((s) => s.name.toLowerCase() === 'typescript')!,
+      skills.find((s) => s.name.toLowerCase() === 'html5')!,
+      skills.find((s) => s.name.toLowerCase() === 'css')!,
+      skills.find((s) => s.name.toLowerCase() === 'tailwindcss')!,
+    ].filter(Boolean),
+    repository: 'https://github.com/david11267/david-aslan-dev',
+    companyName: 'Personal project',
+  },
+  {
+    header: 'RealestateCC',
+    text: "This is a Web based client for desktop and mobile that helps users find more USP's (Unique Selling Point) for their clients automatically and then present that data in the client. The application is gathering data from both external api's and web scraping. The backend is built in .NET 6 and is connected to a SQL database via Entity Framework. I use Google's apis for logging in and geolocation data for nearby points of interest as well as route planning between multiple locations.",
+    skills: [
+      skills.find((s) => s.name.toLowerCase() === '.net')!,
+      skills.find((s) => s.name.toLowerCase() === 'c#')!,
+      skills.find((s) => s.name.toLowerCase() === 'sql server')!,
+      skills.find((s) => s.name.toLowerCase() === 'javascript')!,
+      skills.find((s) => s.name.toLowerCase() === 'typescript')!,
+      skills.find((s) => s.name.toLowerCase() === 'react')!,
+      skills.find((s) => s.name.toLowerCase() === 'css')!,
+      skills.find((s) => s.name.toLowerCase() === 'google cloud')!,
+    ].filter(Boolean),
+    repository: 'https://github.com/david11267/InfoCollCompWebPage',
+    companyName: 'Personal project',
+  },
+  {
+    header: 'Värmeverket',
+    text: 'Revamped Värmeverkets website by migrating from Webflow to NextJs and Storyblok. Worked alongside the design team to implement customized animations and styling, resulting in a faster and more visually appealing website.',
+    href: 'https://www.varmeverket.com/en',
+    skills: [
+      skills.find((s) => s.name.toLowerCase() === 'storyblok')!,
+      skills.find((s) => s.name.toLowerCase() === 'next.js')!,
+      skills.find((s) => s.name.toLowerCase() === 'javascript')!,
+      skills.find((s) => s.name.toLowerCase() === 'typescript')!,
+      skills.find((s) => s.name.toLowerCase() === 'html5')!,
+      skills.find((s) => s.name.toLowerCase() === 'css')!,
+      skills.find((s) => s.name.toLowerCase() === 'tailwindcss')!,
+    ].filter(Boolean),
+    companyName: 'Värmeverket Ab',
+  },
+  {
+    header: 'Sales prospect information scraper',
+    text: 'This was a pretty unsophisticated application built in Python that read organization-numbers from a text file and then scraped relevant information from the web onto a google sheets page that formatted data on a scale of sales potential. This was a really fun and giving project since it provided me with easy sales leads and sales as well as it did the boring brunt work i previously had to do manually.',
+    companyName: 'Personal project',
+    skills: [
+      skills.find((s) => s.name.toLowerCase() === 'python')!,
+      skills.find((s) => s.name.toLowerCase() === 'google sheets')!,
+    ].filter(Boolean),
   },
 ]

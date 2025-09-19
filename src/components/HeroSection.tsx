@@ -1,4 +1,4 @@
-import { SiGithub, SiLinkedin } from 'react-icons/si'
+import { SiGithub, SiGmail, SiLinkedin } from 'react-icons/si'
 import TextType from './TextType'
 import TiltedCard from './TiltedCard'
 import type { ComponentType } from 'react'
@@ -14,6 +14,11 @@ export default function HeroSection() {
       name: 'LinkedIn',
       href: 'https://www.linkedin.com/in/davidaslandev/',
       Icon: SiLinkedin,
+    },
+    {
+      name: 'Email',
+      href: 'mailto:david.aslan1999@gmail.com',
+      Icon: SiGmail,
     },
   ]
 
@@ -52,7 +57,7 @@ export default function HeroSection() {
 
         <div className="mt-8 flex space-x-4  ">
           {socials.map(({ name, href, Icon }) => (
-            <a href={href} className="flex  p-4 rounded-xl">
+            <a href={href} className="flex  p-4 rounded-xl hover:scale-110">
               <Icon className="scale-200" />
             </a>
           ))}
