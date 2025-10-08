@@ -369,6 +369,20 @@ export const projects: Array<Project> = [
     ],
   },
   {
+    companyName: '<Salt/>',
+    header: 'Disney Guesser',
+    text: `A fun little disney guesser in english where the less clues needed for a guess provides a higher score`,
+    imagesUrl: ['disneyGuesser/index.png', 'disneyGuesser/postGuess.png'],
+    href: 'https://disney-guesser-exrw.vercel.app/',
+    skills: [
+      skills.find((s) => s.name.toLowerCase() === 'typescript')!,
+      skills.find((s) => s.name.toLowerCase() === 'tailwindcss')!,
+      skills.find((s) => s.name.toLowerCase() === 'react')!,
+      skills.find((s) => s.name.toLowerCase() === 'vite')!,
+    ],
+  },
+
+  {
     header: 'Quintic-3d',
     text: `Developed a scalable e-commerce platform for custom 3D-printing orders using Next.js, Sanity CMS, and internationalization (i18n) to support multiple languages.
 Created a new landing page for a Quintic subsidiary using Next.js.
