@@ -17,7 +17,8 @@ export default function Project({ project, reverse }: Props) {
         (reverse ? ' lg:flex-row-reverse' : '')
       }
     >
-      <div className="space-y-4">
+      {/* Text Section */}
+      <div className="flex-1 space-y-4">
         <div>
           <a href={project.href}>
             <h3 className="text-2xl">{project.header}</h3>
@@ -26,34 +27,46 @@ export default function Project({ project, reverse }: Props) {
         </div>
 
         <p>{project.text}</p>
-        <a className="text-accent" href={project.repository}>
+        <a className="text-accent break-words" href={project.repository}>
           {project.repository}
         </a>
 
         <div className="flex flex-wrap gap-4">
           <TooltipProvider>
             {project.skills?.map(({ name, Icon, description }) => (
-              <SkillBadge description={description} Icon={Icon} name={name} />
+              <SkillBadge
+                key={name}
+                description={description}
+                Icon={Icon}
+                name={name}
+              />
             ))}
           </TooltipProvider>
         </div>
       </div>
+
+      {/* Carousel Section */}
       {project.imagesUrl && (
-        <div>
+        <div className="w-full lg:w-1/3 flex-shrink-0">
           <Carousel
             plugins={[
               Autoplay({
-                delay: 2000,
+                delay: 3000,
               }),
             ]}
           >
-            <CarouselContent>
-              {project.imagesUrl.map((img) => (
-                <>
-                  <CarouselItem className="basis-1/2">
-                    <img src={img} alt="project related image" />
-                  </CarouselItem>
-                </>
+            <CarouselContent className="gap-4">
+              {project.imagesUrl.map((img, idx) => (
+                <CarouselItem
+                  key={idx}
+                  className="flex-[0_0_auto] w-full h-48 sm:h-64 md:h-72 lg:h-80 overflow-hidden rounded-lg hover:"
+                >
+                  <img
+                    src={img}
+                    alt="project related image"
+                    className="w-full h-full object-contain  transition-all"
+                  />
+                </CarouselItem>
               ))}
             </CarouselContent>
           </Carousel>
