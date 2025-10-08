@@ -321,10 +321,10 @@ export const projects: Array<Project> = [
     repository: 'https://github.com/salt-community/json2resume',
     href: 'https://frontend-proud-butterfly-9919.fly.dev/editor',
     imagesUrl: [
-      '/public/json2resume/editor.png',
-      '/public/json2resume/json.png',
-      '/public/json2resume/root.png',
-      '/public/json2resume/themes.png',
+      'json2resume/editor.png',
+      'json2resume/json.png',
+      'json2resume/root.png',
+      'json2resume/themes.png',
     ],
     skills: [
       skills.find((s) => s.name.toLowerCase() === 'typescript')!,
@@ -346,12 +346,12 @@ export const projects: Array<Project> = [
     text: `A fictive bank app with real transaction, currency exchange, fraud detection, ai logs filtering and admin dashboard with historical data.`,
     repository: 'https://github.com/salt-community/jfs-2025-03-31-novabank-ab',
     imagesUrl: [
-      '/public/novabank/adminDashboard.png',
-      '/public/novabank/adminApplicants.png',
-      '/public/novabank/adminApplicantsDetails.png',
-      '/public/novabank/allTransactions.png',
-      '/public/novabank/novabank3.png',
-      '/public/novabank/userManagement.png',
+      'novabank/adminDashboard.png',
+      'novabank/adminApplicants.png',
+      'novabank/adminApplicantsDetails.png',
+      'novabank/allTransactions.png',
+      'novabank/novabank3.png',
+      'novabank/userManagement.png',
     ],
     href: 'https://youtu.be/nE_16cvehM0?t=1929',
     skills: [
