@@ -8,6 +8,7 @@ import {
   SiDotnet,
   SiFigma,
   SiGooglecloud,
+  SiGooglegemini,
   SiGooglesheets,
   SiHtml5,
   SiJavascript,
@@ -17,6 +18,7 @@ import {
   SiNextdotjs,
   SiNodedotjs,
   SiOpenjdk,
+  SiOpensourceinitiative,
   SiPostgresql,
   SiPostman,
   SiPython,
@@ -296,9 +298,48 @@ export const skills: Array<Skill> = [
     description:
       'Cloud-based spreadsheet application that enables real-time collaboration, data analysis, and integration with other Google services and APIs.',
   },
+
+  {
+    name: 'Google gemini',
+    Icon: SiGooglegemini,
+    description: `Gemini API enables developers to integrate advanced AI capabilities into applications via RESTful endpoints. It supports multimodal inputs—text, images, audio, PDFs, and video—and offers models like Gemini 2.5 Pro for complex reasoning, code generation, and data analysis. The API is accessible through platforms like Google AI Studio`,
+  },
+  {
+    name: 'Open Source',
+    Icon: SiOpensourceinitiative,
+    description: `Open source refers to software whose source code is made publicly available, allowing anyone to view, modify, and distribute it. It encourages collaboration, transparency, and community-driven development.`,
+  },
 ]
 
 export const projects: Array<Project> = [
+  {
+    companyName: '<Salt/>',
+    header: 'json2resume',
+    text: `Data driven resume editor powered by the jsonresume.org format standard. Manage all your resume information in one place. Create, edit, and export a professional resume with an intuitive editor and beautiful themes.
+
+`,
+    repository: 'https://github.com/salt-community/json2resume',
+    href: 'https://frontend-proud-butterfly-9919.fly.dev/editor',
+    imagesUrl: [
+      '/public/json2resume/editor.png',
+      '/public/json2resume/json.png',
+      '/public/json2resume/root.png',
+      '/public/json2resume/themes.png',
+    ],
+    skills: [
+      skills.find((s) => s.name.toLowerCase() === 'typescript')!,
+      skills.find((s) => s.name.toLowerCase() === 'tailwindcss')!,
+      skills.find((s) => s.name.toLowerCase() === 'tanstack router')!,
+      skills.find((s) => s.name.toLowerCase() === 'tanstack query')!,
+      skills.find((s) => s.name.toLowerCase() === 'spring boot')!,
+      skills.find((s) => s.name.toLowerCase() === 'docker')!,
+      skills.find((s) => s.name.toLowerCase() === 'react')!,
+      skills.find((s) => s.name.toLowerCase() === 'vite')!,
+      skills.find((s) => s.name.toLowerCase() === 'google cloud')!,
+      skills.find((s) => s.name.toLowerCase() === 'google gemini')!,
+      skills.find((s) => s.name.toLowerCase() === 'open source')!,
+    ],
+  },
   {
     companyName: '<Salt/>',
     header: 'Nova Bank',
