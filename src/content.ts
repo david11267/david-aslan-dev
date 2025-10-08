@@ -303,6 +303,16 @@ export const projects: Array<Project> = [
     companyName: '<Salt/>',
     header: 'Nova Bank',
     text: `A fictive bank app with real transaction, currency exchange, fraud detection, ai logs filtering and admin dashboard with historical data.`,
+    repository: 'https://github.com/salt-community/jfs-2025-03-31-novabank-ab',
+    imagesUrl: [
+      '/public/novabank/adminDashboard.png',
+      '/public/novabank/adminApplicants.png',
+      '/public/novabank/adminApplicantsDetails.png',
+      '/public/novabank/allTransactions.png',
+      '/public/novabank/novabank3.png',
+      '/public/novabank/userManagement.png',
+    ],
+    href: 'https://youtu.be/nE_16cvehM0?t=1929',
     skills: [
       skills.find((s) => s.name.toLowerCase() === 'typescript')!,
       skills.find((s) => s.name.toLowerCase() === 'tailwindcss')!,
