@@ -300,8 +300,29 @@ export const skills: Array<Skill> = [
 
 export const projects: Array<Project> = [
   {
+    companyName: '<Salt/>',
+    header: 'Nova Bank',
+    text: `A fictive bank app with real transaction, currency exchange, fraud detection, ai logs filtering and admin dashboard with historical data.`,
+    skills: [
+      skills.find((s) => s.name.toLowerCase() === 'typescript')!,
+      skills.find((s) => s.name.toLowerCase() === 'tailwindcss')!,
+      skills.find((s) => s.name.toLowerCase() === 'tanstack router')!,
+      skills.find((s) => s.name.toLowerCase() === 'tanstack query')!,
+      skills.find((s) => s.name.toLowerCase() === 'postgres-sql')!,
+      skills.find((s) => s.name.toLowerCase() === 'spring boot')!,
+      skills.find((s) => s.name.toLowerCase() === 'postgres-sql')!,
+      skills.find((s) => s.name.toLowerCase() === 'docker')!,
+      skills.find((s) => s.name.toLowerCase() === 'react')!,
+      skills.find((s) => s.name.toLowerCase() === 'vite')!,
+      skills.find((s) => s.name.toLowerCase() === 'google cloud')!,
+    ],
+  },
+  {
     header: 'Quintic-3d',
-    text: 'A landing page for a on demand 3d-printing store complete with sanity cms, attached shopify store, internationalization and contact/upload form connected to company email allowing qustomers to request quotes on their CAD files.',
+    text: `Developed a scalable e-commerce platform for custom 3D-printing orders using Next.js, Sanity CMS, and internationalization (i18n) to support multiple languages.
+Created a new landing page for a Quintic subsidiary using Next.js.
+Converted legacy building plans into CAD format with customer-specific modifications, enabling approved home remodels through Stockholm city.
+`,
     skills: [
       skills.find((s) => s.name.toLowerCase() === 'next.js')!,
       skills.find((s) => s.name.toLowerCase() === 'typescript')!,
@@ -347,7 +368,8 @@ export const projects: Array<Project> = [
   },
   {
     header: 'Värmeverket',
-    text: 'Revamped Värmeverkets website by migrating from Webflow to NextJs and Storyblok. Worked alongside the design team to implement customized animations and styling, resulting in a faster and more visually appealing website.',
+    text: `Redesigned and optimized the Värmeverket website (varmeverket.com) for speed and mobile responsiveness in collaboration with the internal design team. I used Next js for server sided generation (SSG) thus offloading a lot of heavy lifting from the client and I utilized TypeScript and Tailwindcss for faster development time and type safety, storybook as a content management system (cms) and Vercel as hosting provider.
+`,
     href: 'https://www.varmeverket.com/en',
     skills: [
       skills.find((s) => s.name.toLowerCase() === 'storyblok')!,
@@ -362,7 +384,7 @@ export const projects: Array<Project> = [
   },
   {
     header: 'Sales prospect information scraper',
-    text: 'This was a pretty unsophisticated application built in Python that read organization-numbers from a text file and then scraped relevant information from the web onto a google sheets page that formatted data on a scale of sales potential. This was a really fun and giving project since it provided me with easy sales leads and sales as well as it did the boring brunt work i previously had to do manually.',
+    text: 'This was a application built in Python that read organization-numbers from a text file and then scraped relevant information from the web onto a google sheets page that formatted data on a scale of sales potential. This was a really fun and giving project since it provided me with easy sales leads and sales as well as it did the boring brunt work i previously had to do manually.',
     companyName: 'Personal project',
     skills: [
       skills.find((s) => s.name.toLowerCase() === 'python')!,
