@@ -1,9 +1,14 @@
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Tooltip } from '@radix-ui/react-tooltip'
 import { TooltipContent, TooltipTrigger } from './ui/tooltip'
 import type { Skill } from '@/types/skills'
 
-export default function SkillBadge({ Icon, description, name }: Skill) {
+export default function SkillBadge({
+  urlIcon,
+  Icon,
+  description,
+  name,
+}: Skill) {
   const [isMobile, setIsMobile] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const badgeRef = useRef<HTMLDivElement>(null)
@@ -69,7 +74,9 @@ export default function SkillBadge({ Icon, description, name }: Skill) {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <Icon className="h-5 w-5" />
+          {Icon && <Icon className="h-5 w-5" />}
+          {urlIcon && <img src={urlIcon} className="h-5 w-5 grayscale" />}
+
           <span className="text-sm">{name}</span>
         </div>
       </TooltipTrigger>
