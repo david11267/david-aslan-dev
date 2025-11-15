@@ -13,7 +13,7 @@ export function ProjectsSection() {
         ))}
       </section>
 
-      <section className="space-y-16">
+      <section>
         <GithubProjects />
       </section>
     </>
