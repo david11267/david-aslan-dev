@@ -7,13 +7,16 @@ export default function useGitProjects() {
   return useQuery({
     queryKey: ['projects'],
     queryFn: async (): Promise<RepoSummaryResponse> => {
-      const response = await fetch('http://localhost:8080/api/projects', {
-        method: 'POST',
-        headers: {
-          apiKey: apikey,
+      const response = await fetch(
+        'https://spring-backend-a4qk4.ondigitalocean.app/api/projects',
+        {
+          method: 'POST',
+          headers: {
+            apiKey: apikey,
+          },
+          body: '',
         },
-        body: '',
-      })
+      )
 
       if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`)
