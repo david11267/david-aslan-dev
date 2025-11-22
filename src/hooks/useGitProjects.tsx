@@ -2,23 +2,25 @@ import { useQuery } from '@tanstack/react-query'
 import type { RepoSummaryResponse } from '@/types/githubProjects'
 
 export default function useGitProjects() {
-  const apikey = import.meta.env.VITE_GITHUB_API_KEY
+  const apikey = import.meta.env.VITE_GITHUB_PROJECTS_API_KEY
+
   return useQuery({
     queryKey: ['projects'],
     queryFn: async (): Promise<RepoSummaryResponse> => {
-      const response = await fetch(
-        `https://spring-backend-a4qk4.ondigitalocean.app/api/projects`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            apiKey: apikey,
-          },
+      const response = await fetch('http://localhost:8080/api/projects', {
+        method: 'POST',
+        headers: {
+          apiKey: apikey,
         },
-      )
+        body: '',
+      })
 
-      if (!response.ok) throw new Error('Request failed')
-      return response.json()
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`)
+      }
+
+      const data: RepoSummaryResponse = await response.json()
+      return data
     },
   })
 }
