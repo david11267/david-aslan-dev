@@ -2,20 +2,13 @@ import { useQuery } from '@tanstack/react-query'
 import type { RepoSummaryResponse } from '@/types/githubProjects'
 
 export default function useGitProjects() {
-  const apikey = import.meta.env.VITE_GITHUB_PROJECTS_API_KEY;
+  const apikey = import.meta.env.VITE_GITHUB_PROJECTS_API_KEY
 
   return useQuery({
     queryKey: ['projects'],
     queryFn: async (): Promise<RepoSummaryResponse> => {
       const response = await fetch(
-        'https://githubapibackend.davidaslan.dev/api/projects',
-        {
-          method: 'POST',
-          headers: {
-            apiKey: apikey,
-          },
-          body: '',
-        },
+        'https://githubapibackend.davidaslan.dev/api/projects?apiKey=' + apikey,
       )
 
       if (!response.ok) {
