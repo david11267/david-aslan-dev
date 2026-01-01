@@ -8,7 +8,7 @@ export default function useGitProjects() {
     queryKey: ['projects'],
     queryFn: async (): Promise<RepoSummaryResponse> => {
       const response = await fetch(
-        'https://spring-backend-a4qk4.ondigitalocean.app/api/projects',
+        'https://githubapibackend.davidaslan.dev/api/projects',
         {
           method: 'POST',
           headers: {
